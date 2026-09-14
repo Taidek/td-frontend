@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Taidek — Frontend
 
-## Getting Started
+Aplicación web frontend para la plataforma descentralizada **Taidek**, construida con Next.js (App Router), React 19, Tailwind CSS v4, integración con Solana y autenticación Web3/Web2 mediante Privy.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Tecnologías
+
+| Componente | Tecnología | Descripción |
+|---|---|---|
+| **Framework** | [Next.js 16](https://nextjs.org/) (App Router) | Framework React para producción con Server Components y Turbopack |
+| **Librería UI** | [React 19](https://react.dev/) | Biblioteca principal de interfaz de usuario |
+| **Lenguaje** | [TypeScript 5](https://www.typescriptlang.org/) | Tipado estático estricto y seguridad en tiempo de compilación |
+| **Estilos** | [Tailwind CSS v4](https://tailwindcss.com/) + PostCSS | Framework CSS utility-first de última generación |
+| **Autenticación & Wallets** | [Privy](https://www.privy.io/) (`@privy-io/react-auth`) | Onboarding Web2/Web3 fluido y embedded wallets |
+| **Blockchain** | [Solana](https://solana.com/) (`@solana/kit`, `@solana-program/*`) | Integración con programas on-chain, transacciones y RPC de Solana |
+| **Linter & Formatter** | [Biome](https://biomejs.dev/) | Análisis estático y formateador ultrarrápido |
+| **Git Hooks & Commit Lint** | [Husky](https://typicode.github.io/husky/) + [Commitlint](https://commitlint.js.org/) | Validación de calidad y formato convencional en commits/pushes |
+| **Package Manager** | [pnpm](https://pnpm.io/) (v10) | Gestor de paquetes rápido y determinista |
+
+---
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── app/                  # App Router de Next.js (layouts, páginas, rutas, globals.css)
+├── components/           # Componentes React modulares y reutilizables
+│   ├── common/           # Componentes base / primitivos (botones, modales, inputs)
+│   ├── layout/           # Componentes estructurales (Header, Footer, Navbar)
+│   └── modules/          # Componentes de funcionalidad específica
+├── hooks/                # Custom React Hooks reutilizables
+├── icons/                # Componentes SVG encapsulados
+├── lib/                  # Clientes y configuraciones (Privy, Solana RPC)
+├── services/             # Clientes de API y llamadas al backend de Taidek
+├── types/                # Interfaces y tipos TypeScript globales
+└── utils/                # Utilidades, constantes y formateadores
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📋 Requisitos Previos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Node.js**: `>= 20.0.0` (recomendado `24.x`, especificado en `.nvmrc`)
+- **pnpm**: `>= 10.0.0`
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Instalación y Configuración
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clonar el repositorio y entrar al directorio:
+   ```bash
+   git clone git@github.com:Taidek/td-frontend.git
+   cd td-frontend
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Instalar dependencias con `pnpm`:
+   ```bash
+   pnpm install
+   ```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 💻 Scripts y Comandos Disponibles
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Comando | Descripción |
+|---|---|
+| `pnpm dev` | Inicia el servidor de desarrollo en `http://localhost:3000` con Turbopack |
+| `pnpm build` | Compila la aplicación para producción y valida los tipos de TypeScript |
+| `pnpm start` | Inicia el servidor de producción optimizado |
+| `pnpm lint` | Analiza el código en busca de errores y formato con Biome |
+| `pnpm format` | Formatea todos los archivos del proyecto con Biome |
+| `pnpm check` | Aplica correcciones automáticas de Biome |
+| `pnpm prepare` | Configura los hooks de Husky en el entorno local |
+
+---
+
+## 📜 Reglas de Desarrollo
+
+Para conocer las directrices de arquitectura, convenciones de componentes, límites de líneas y estándares de calidad de código, consulta el archivo [RULES.md](./RULES.md).
