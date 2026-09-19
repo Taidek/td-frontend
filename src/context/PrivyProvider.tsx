@@ -5,8 +5,21 @@ import {
   type PrivyClientConfig,
 } from "@privy-io/react-auth";
 import { toSolanaWalletConnectors } from "@privy-io/react-auth/solana";
-import { type ReactNode, useMemo } from "react";
+import { type ReactNode, useEffect, useMemo, useState } from "react";
 import { PRIVY_APP_ID, PRIVY_CLIENT_ID } from "@/utils/constants";
+
+const PRIVY_ACCENT_CSS_VAR = "--color-privy-accent";
+const PRIVY_ACCENT_FALLBACK = "#676fff";
+
+function getPrivyAccentColor(): `#${string}` {
+  if (typeof window === "undefined") {
+    return PRIVY_ACCENT_FALLBACK as `#${string}`;
+  }
+  const value = getComputedStyle(document.documentElement)
+    .getPropertyValue(PRIVY_ACCENT_CSS_VAR)
+    .trim();
+  return (value || PRIVY_ACCENT_FALLBACK) as `#${string}`;
+}
 
 export interface PrivyProviderProps {
   children: ReactNode;
@@ -22,12 +35,19 @@ export function PrivyProvider({
   config,
 }: PrivyProviderProps) {
   const solanaConnectors = useMemo(() => toSolanaWalletConnectors(), []);
+  const [accentColor, setAccentColor] = useState<`#${string}`>(
+    PRIVY_ACCENT_FALLBACK as `#${string}`,
+  );
+
+  useEffect(() => {
+    setAccentColor(getPrivyAccentColor());
+  }, []);
 
   const mergedConfig: PrivyClientConfig = useMemo(
     () => ({
       appearance: {
         theme: "dark",
-        accentColor: "#676FFF",
+        accentColor,
         walletChainType: "solana-only",
         walletList: [
           "detected_wallets",
@@ -52,7 +72,7 @@ export function PrivyProvider({
       },
       ...config,
     }),
-    [config, solanaConnectors],
+    [accentColor, config, solanaConnectors],
   );
 
   return (
