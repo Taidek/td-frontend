@@ -1,6 +1,8 @@
-import LandingHero from "@/components/modules/LandingHero";
-import TournamentsSection from "@/components/modules/TournamentsSection";
-import TrustBar from "@/components/modules/TrustBar";
+import { EcosystemSection } from "@/components/modules/EcosystemSection";
+import { HowWorksSection } from "@/components/modules/HowWorksSection";
+import { LandingHero } from "@/components/modules/LandingHero";
+import { TournamentsSection } from "@/components/modules/TournamentsSection";
+import { TrustBar } from "@/components/modules/TrustBar";
 
 export default function Home() {
   return (
@@ -8,6 +10,8 @@ export default function Home() {
       <LandingHero />
       <TrustBar />
       <TournamentsSection />
+      <HowWorksSection />
+      <EcosystemSection />
     </main>
   );
 }

@@ -5,7 +5,7 @@ import EscrowTelemetryCard from "@/components/modules/EscrowTelemetryCard";
 import MicroGuarantees from "@/components/modules/MicroGuarantees";
 import { HERO_CTAS } from "@/constants/navigation";
 
-export default function LandingHero() {
+export const LandingHero = () => {
   return (
     <section className="relative bg-hero-gradient">
       <div className="flex w-full flex-col gap-12 px-6 pb-20 pt-[104px] sm:px-10 lg:flex-row lg:items-center lg:justify-center lg:gap-16 lg:pb-28 lg:pt-36 xl:gap-20 2xl:px-28">
@@ -52,4 +52,4 @@ export default function LandingHero() {
       </div>
     </section>
   );
-}
+};

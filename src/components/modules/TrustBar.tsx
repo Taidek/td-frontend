@@ -1,6 +1,6 @@
 import { TRUST_ITEMS } from "@/constants/trustConstants";
 
-export default function TrustBar() {
+export const TrustBar = () => {
   return (
     <section className="w-full border-y border-line bg-surface-4">
       <div className="w-full px-6 py-4 sm:px-10 lg:px-16 xl:px-20 2xl:px-28">
@@ -32,4 +32,4 @@ export default function TrustBar() {
       </div>
     </section>
   );
-}
+};
