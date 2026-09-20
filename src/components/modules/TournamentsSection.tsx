@@ -3,10 +3,9 @@
 import { useState } from "react";
 
 import TournamentCard from "@/components/modules/TournamentCard";
-import TournamentCups from "@/components/modules/TournamentCups";
 import { FILTERS, TOURNAMENTS } from "@/constants/tournamentConstants";
 
-export default function TournamentsSection() {
+export const TournamentsSection = () => {
   const [activeFilter, setActiveFilter] = useState(FILTERS[0]);
 
   return (
@@ -62,8 +61,6 @@ export default function TournamentsSection() {
           <TournamentCard key={tournament.title} {...tournament} />
         ))}
       </div>
-
-      <TournamentCups />
     </section>
   );
-}
+};

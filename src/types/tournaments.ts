@@ -16,16 +16,5 @@ export interface TournamentCardProps {
   footerLeft: { icon?: LucideIcon; text: string };
   footerAction: { type: "button" | "link"; label: string; href?: string };
   stripClassName: string;
-}
-
-// TournamentCups
-export type CupStatus = "open" | "live" | "finished";
-
-export interface TournamentCupCard {
-  id: string;
-  status: CupStatus;
-  game: string;
-  title: string;
-  subtitle: string;
-  prizeValue: string;
+  image: { src: string; alt: string };
 }
