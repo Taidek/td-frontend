@@ -8,8 +8,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-anton);
+  --font-condensed: var(--font-barlow-condensed);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +20,70 @@
   }
 }
 
+@theme {
+  /* Taidek desing colors */
+  --color-surface-0: #000000;
+  --color-surface-1: #131313;
+  --color-surface-2: #1c1b1b;
+  --color-surface-3: #201f1f;
+  --color-surface-4: #111213;
+  --color-surface-5: #2a2a2a;
+  --color-surface-6: #343434;
+  --color-surface-input: #0e0e0e;
+  --color-surface-alpha-5: rgba(255, 255, 255, 0.05);
+  --color-surface-alpha-10: rgba(255, 255, 255, 0.1);
+
+  --color-primary: #ff5542;
+  --color-primary-bright: #e22a12;
+  --color-primary-soft: #ffb4a8;
+  --color-primary-pale: #ffdad4;
+  --color-primary-dark: #5c0000;
+  --color-primary-deep: #c2323e;
+
+  --color-success: #34d399;
+  --color-success-deep: #10b981;
+  --color-success-dark: #022c22;
+  --color-success-chip: #07241e;
+
+  --color-warning: #fbbf24;
+  --color-warning-deep: #f59e0b;
+
+  --color-ink: #ffffff;
+  --color-ink-bright: #f5f5f5;
+  --color-ink-soft: #e5e2e1;
+  --color-ink-muted: #c6c6cb;
+  --color-ink-faint: #94959a;
+  --color-ink-subtle: #93959a;
+  --color-ink-border: #46464b;
+  --color-ink-border-soft: #353534;
+  --color-ink-link: #e7bdb6;
+
+  --color-line: #2e3034;
+  --color-line-soft: #35383b;
+
+  --color-privy-accent: #676fff;
+
+  /* Tournaments section */
+  --color-warning-dark: #451a03;
+  --color-warning-border: #d97706;
+  --color-success-border: #059669;
+  --color-primary-ember: #762f27;
+  --color-ink-border-strong: #414145;
+
+  --shadow-primary-glow: 0 0 16px rgba(226, 42, 18, 0.35);
+}
+
+@utility bg-hero-gradient {
+  background-image: radial-gradient(
+    130% 120% at 100% 0%,
+    #131313 2%,
+    #260e0b 47%,
+    #131313 71%
+  );
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-surface-1);
+  color: var(--color-ink);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }

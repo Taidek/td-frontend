@@ -42,3 +42,6 @@ yarn-error.log*
 next-env.d.ts
 # Local Pi runtime state
 .atl/
+
+# Local opencode config (MCP servers, agent overrides)
+.opencode/
